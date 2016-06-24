@@ -1,22 +1,22 @@
-<ion-view title="Đăng ký" class="register">
+<ion-view title="Registro" class="register">
     <ion-content padding="false">
 
         <div class="list list-inset">
             <label class="item item-input item-stacked-label">
-                <span class="input-label">Họ và tên</span>
-                <input type="text" placeholder="Nguyễn Văn A" ng-model="registerData.fullname">
+                <span class="input-label">Nombre</span>
+                <input type="text" placeholder="Nombre(s) Apellido(s)" ng-model="registerData.fullname">
             </label>
             <label class="item item-input item-stacked-label">
-                <span class="input-label">Số điện thoại</span>
+                <span class="input-label">Usuario</span>
                 <input type="tel" placeholder="099099909"  ng-model="registerData.username">
             </label>
             <label class="item item-input item-stacked-label">
-                <span class="input-label">Mật khẩu</span>
+                <span class="input-label">Clave</span>
                 <input type="password" placeholder="&#9679;&#9679;&#9679;&#9679;&#9679;"  ng-model="registerData.password">
             </label>
 
             <label class="item item-input item-stacked-label">
-                <span class="input-label">Nhập lại mật khẩu</span>
+                <span class="input-label">Confirmar Clave</span>
                 <input type="password" placeholder="&#9679;&#9679;&#9679;&#9679;&#9679;"  ng-model="registerData.repassword">
             </label>
 
@@ -33,7 +33,7 @@
 
         </div>
         <div style="padding: 0 10px;">
-            <button class="button button-block button-positive" ng-click="updateUserInfo(registerData)" ng-disabled="registerProcess">Đăng ký</button>
+            <button class="button button-block button-positive" ng-click="updateUserInfo(registerData)" ng-disabled="registerProcess">Registrar</button>
         </div>
 
     </ion-content>
