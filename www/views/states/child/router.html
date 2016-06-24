@@ -18,7 +18,7 @@
 
                                         <input type="text" class="form-control" id="originInput" select-on-click
                                                ng-model="startPoint" ng-change="inputOnChange('originInput')"
-                                               ng-focus="onFocus('originInput')" placeholder="Nhập điểm hiện tại">
+                                               ng-focus="onFocus('originInput')" placeholder="Ingresar Ubicacion Origen">
 
 
                                     </label>
@@ -55,7 +55,7 @@
 
 
                                         <input type="text" class="form-control" id="destinationInput" select-on-click
-                                               placeholder="Nhập điểm đến của bạn" ng-model="destinationInput"
+                                               placeholder="Ingresar Ubicacion Destino" ng-model="destinationInput"
                                                ng-change="inputOnChange('destinationInput')" ng-focus="onFocus('destinationInput')"
                                                >
 
@@ -105,15 +105,15 @@
         <div class="tabs tabs-icon-top tab-footer-input bar-balanced">
             <a class="tab-item" ng-class="classRouter1" ng-click="slideOne()">
                 <i class="icon ion-flag"></i>
-                Điểm hiện tại
+                Puntuacion actual
             </a>
             <a ng-click="slideTwo()" class="tab-item" ng-class="classRouter2">
                 <i class="icon ion-flag"></i>
-                Điểm đến
+                Destino
             </a>
             <a ng-click="slideThree()" class="tab-item" ng-class="classRouter3">
                 <i class="icon ion-model-s"></i>
-                Hay đi
+                o ir a
             </a>
         </div>
     </ion-footer-bar>

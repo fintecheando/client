@@ -11,41 +11,29 @@ z-index: 9;
 
 
 <div class="overlay" style="background: transparent;" ng-if="status.showCounter">
-</div>
+    </div>
+        <div id="slide4" ng-if="status.showCounter">
+        <div class="img-test" style='padding: 46px 47px;border-radius:50%;'>
+            <p style="font-size: 50px;color: #ffffff;font-family: fantasy;">{{status.callCounter}}</p></div>
+        <div resize-width id='pulse1'></div>
+        <div resize-width id='pulse2'></div>
+    </div>
+
+    <div class="overlay" ng-if="overlaymap">
+
+    </div>
 
 
+    <div class="swipe-home-left">
+        swipe
+    </div>
+    <div class="swipe-home-right">
+        swipe
+    </div>
 
+    <div class="overlay-full">
 
-
-
-
-
-
-
-
-<div id="slide4" ng-if="status.showCounter">
-
-    <div class="img-test" style='padding: 46px 47px;border-radius:50%;'>
-        <p style="font-size: 50px;color: #ffffff;font-family: fantasy;">{{status.callCounter}}</p></div>
-    <div resize-width id='pulse1'></div>
-    <div resize-width id='pulse2'></div>
-</div>
-
-<div class="overlay" ng-if="overlaymap">
-
-</div>
-
-
-<div class="swipe-home-left">
-    swipe
-</div>
-<div class="swipe-home-right">
-    swipe
-</div>
-
-<div class="overlay-full">
-
-</div>
+    </div>
 
 
 
@@ -129,14 +117,14 @@ font-size: 12px;">{{endPoint}}</p>
 
     <div ng-show="!status.hasRouter" style="width: 100%;margin-top: 70px;">
         <button class="button button-full button-assertive" ng-click="callTaxi()" ng-disabled="status.callTaxiProcess">
-            <i class="ion ion-android-call"></i>GỌI TAXI
+            <i class="ion ion-android-call"></i>Llamar a Taxi
         </button>
     </div>
 
 
     <div ng-show="status.hasDriveAccept" style="width: 100%;margin-top: 70px;margin-left:10px">
         <button class="button  button-full bar-balanced" ng-click="$state.go('app.listTaxiAccept', {hasTaxi: true})">
-            <i class="ion ion-document-text"></i>TAXI ĐỒNG Ý
+            <i class="ion ion-document-text"></i>Taxi Confirmado
         </button>
     </div>
 
@@ -149,14 +137,14 @@ font-size: 12px;">{{endPoint}}</p>
             <li>
                 <label class="checkbox" ng-show="status.hasRouter">
                     <input type="checkbox" ng-change="toggelPinPosition()" ng-model="status.pinPosition">
-                    Theo dõi
+                    Rastrear
                 </label>
             </li>
             <li>
                 <a ng-click="openConfirmDestroyRoute()">
                     <i class="ion-close-circled"></i>
 
-                    <p>Hủy lộ trình</p></a>
+                    <p>Cancelar</p></a>
             </li>
             <li>
                 <a ng-click="goToPage('app.driverInfo',{id : idTaxi})">

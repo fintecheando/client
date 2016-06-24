@@ -41,7 +41,7 @@
             <div class="item item-avatar" ng-if="!isLogin" style="padding: 0;">
 
 
-                <h2 style="text-align: center;text-transform: uppercase; font-weight: bold;"><span style="color: #DA3722;">Hub</span> Taxi</h2>
+                <h2 style="text-align: center;text-transform: uppercase; font-weight: bold;"><span style="color: #DA3722;">CDMX</span> TXMX</h2>
             </div>
 
             <div class="item item-avatar" ng-if="isLogin">
@@ -57,19 +57,19 @@
 
         <ul class="list">
             <a menu-close ui-sref-active="li-active" class="item-list" ui-sref="app.home">
-                <i class="ion-android-call royal" style="font-size: 20px;"></i> Gọi taxi
+                <i class="ion-android-call royal" style="font-size: 20px;"></i> Llamar Taxi
             </a>
 
 
             <a ui-sref-active="li-active" class="item-list" menu-toggle="left" ui-sref="app.message">
                 <i class="icon ion-email energized"></i>
-                Thông báo
+                Notificar
                 <!--<span class="badge badge-assertive">0</span>-->
             </a>
 
             <a ui-sref-active="li-active" ui-sref="app.taxicompany" class="item-list" menu-toggle="left">
                 <i class="icon ion-chatbubble-working positive"></i>
-                Danh bạ
+                Contactos
 
             </a>
 
@@ -78,7 +78,7 @@
             </a>-->
             <a ui-sref-active="li-active" ui-sref="app.bookmark" class="item-list" menu-toggle="left">
                 <i class="icon ion-star calm"></i>
-                Địa chỉ yêu thích
+                Direcciones Favoritas
             </a>
 <!--
             <a ng-if="isLogin" ui-sref-active="li-active" ui-sref="app.myTaxi" class="item-list" menu-toggle="left">
@@ -88,7 +88,7 @@
 
             <a ng-if="isLogin" ui-sref-active="li-active" ui-sref="app.history" class="item-list" menu-toggle="left">
                 <i class="ion-android-folder icon"></i>
-                Lịch sử
+                Historico
 
             </a>
 
@@ -106,17 +106,17 @@
               </li>-->
             <a ui-sref="app.login" ui-sref-active="li-active" class="item-list" menu-toggle="left" ng-if="!isLogin">
                 <i class="icon ion-person-stalker balanced"></i>
-                Đăng nhập
+                Login
             </a>
 
             <a ui-sref-active="li-active" ui-sref="app.setting" class="item-list" menu-toggle="left" ng-if="isLogin">
                 <i class="ion-android-settings royal"></i>
-                Thông tin tài khoản
+                Informacion de la Cuenta
             </a>
 
             <a class="item-list" menu-toggle="left" ng-click="logout()" ng-if="isLogin">
                 <i class="icon ion-share energized"></i>
-                Đăng xuất
+                Salir
             </a>
 
 
@@ -130,7 +130,7 @@
     <ion-header-bar class="bar-dark">
 
         <h2 class="text-center see-taxi" ng-if="!status.hasRouter">
-            <i class="ion-model-s ion"></i> &nbsp Taxi xung quanh
+            <i class="ion-model-s ion"></i> &nbsp Taxi por
         </h2>
 
 
@@ -138,14 +138,14 @@
 
 
 
-        <h2 class="text-center see-taxi" ng-if="status.hasRouter"><i class="ion-map"></i>Theo dõi lộ trình</h2>
+        <h2 class="text-center see-taxi" ng-if="status.hasRouter"><i class="ion-map"></i>Hoja de ruta</h2>
 
     </ion-header-bar>
     <!--ng-if="!status.hasRouter"-->
     <ion-content>
         <ion-refresher on-refresh="doRefresh()"
-                       pulling-text="Kéo xuống để cập nhật..."
-                       refreshing-text="Cập nhật danh sách!"
+                       pulling-text="Deslizar hacia abajo para actualizar"
+                       refreshing-text="Actualizar lista!"
                        refreshing-icon="ion-loading-c"
                        class="refresher">
         </ion-refresher>
@@ -177,7 +177,7 @@
                         <div class="box default" style="margin: 6px 0 5px 0;">
                             <button class="button button-assertive" ng-click="quickChooseTaxi(item)"
                                     ui-sref="app.home" ng-disabled="quickChooseTaxiProcess">
-                                Gọi taxi
+                                Llamar taxi
                             </button>
                         </div>
                     </ion-slide>
