@@ -8,7 +8,7 @@ angular.module('itaxiApp')
             $scope.listTaxiNearest = [];
 
             var onSuccess = function (position) {
-                $logger.info('2G getPosition', 'success', position);
+                $logger.info('3G getPosition', 'success', position);
 
                 var sendLocation = {
                     deviceId: appConfig.deviceId,

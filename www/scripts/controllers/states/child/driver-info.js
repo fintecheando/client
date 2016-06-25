@@ -14,7 +14,7 @@ angular.module('itaxiApp')
 
             var loadDriverInfo = function () {
 
-                $rootScope.showStatus('Đang lấy thông tin..');
+                $rootScope.showStatus('La obtención de información ..');
 
                 if (appDataStore.taxiInfo.size() > 0 && appDataStore.taxiInfo.get(driverID)) {
                     $scope.infomation = appDataStore.taxiInfo.get(driverID);
@@ -63,7 +63,7 @@ angular.module('itaxiApp')
 
                             //$ionicLoading.hide();
                         } else {
-                          $rootScope.showStatus('Lấy thông tin thất bại',1400);
+                          $rootScope.showStatus('Obtener información de fallo',1400);
                         }
                     });
                 }
@@ -98,12 +98,12 @@ angular.module('itaxiApp')
                                 $rootScope.notify('Xóa Taxi thành công');
                                 $scope.canAddTaxi = true;
                             } else {
-                                $rootScope.notify('Có lỗi xẩy ra !');
+                                $rootScope.notify('Se ha producido un error !');
                             }
                         });
                     }else {
                         $scope.removeMyTaxiProcess = false;
-                        $rootScope.notify('Có sự cố xảy ra ! Vui lòng thử lại sau .');
+                        $rootScope.notify('Hay un problema! Por favor, inténtelo de nuevo más tarde.');
                     }
                 });
 

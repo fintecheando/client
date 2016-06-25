@@ -36,12 +36,12 @@ angular.module('itaxiApp')
             $scope.showActionsheet = function () {
 
                 $ionicActionSheet.show({
-                    titleText: 'Thay ảnh đại diện',
+                    titleText: 'Cambiar avatar',
                     buttons: [
-                        { text: 'Chụp ảnh mới' },
-                        { text: 'Từ bộ sưu tập' }
+                        { text: 'Tomar una nueva foto' },
+                        { text: 'De la galeria' }
                     ],
-                    cancelText: 'Hủy',
+                    cancelText: 'Cancelar',
                     cancel: function () {
                         console.log('CANCELLED');
                     },
@@ -65,7 +65,7 @@ angular.module('itaxiApp')
             $scope.onFileSelect = function ($files, userInfo) {
 
                 $ionicLoading.show({
-                    content: 'Đang tải lên .. ',
+                    content: 'Subiendo .. ',
                     animation: 'fade-in',
                     showBackdrop: false,
                     maxWidth: 200
@@ -113,7 +113,7 @@ angular.module('itaxiApp')
 
 
                             $ionicLoading.show({
-                                content: 'Tải lên thành công !',
+                                content: 'Sube éxito!',
                                 animation: 'fade-in',
                                 showBackdrop: false,
                                 maxWidth: 200
@@ -132,7 +132,7 @@ angular.module('itaxiApp')
 
             var upload = function (imageURI, userInfo) {
                 $ionicLoading.show({
-                    content: 'Đang tải lên .. ',
+                    content: 'Subiendo.. ',
                     animation: 'fade-in',
                     showBackdrop: false,
                     maxWidth: 200
@@ -166,7 +166,7 @@ angular.module('itaxiApp')
                         if (response.success === true) {
                             $logger.info('upload', 'response.success', response.success);
                             $ionicLoading.show({
-                                content: 'Tải lên thành công !',
+                                content: 'Sube éxito!',
                                 animation: 'fade-in',
                                 showBackdrop: false,
                                 maxWidth: 200
@@ -181,7 +181,7 @@ angular.module('itaxiApp')
                             });
                         } else {
                             $ionicLoading.show({
-                                content: 'Tải lên thất bại ! !',
+                                content: 'Error de subida ! !',
                                 animation: 'fade-in',
                                 showBackdrop: false,
                                 maxWidth: 200
@@ -227,7 +227,7 @@ angular.module('itaxiApp')
             $scope.saveUserInfo = function (userInfo) {
                 $scope.disableButtonSave = true;
                 $ionicLoading.show({
-                    content: 'Vui lòng đợi trong giây lát ..',
+                    content: 'Por favor espere ..',
                     animation: 'fade-in',
                     showBackdrop: false,
                     maxWidth: 200
@@ -251,7 +251,7 @@ angular.module('itaxiApp')
 
                         $ionicLoading.show({
 
-                            content: 'Cập nhật thành công !'
+                            content: 'Actualizar éxito !'
 
                         });
                         setTimeout(function () {
@@ -261,7 +261,7 @@ angular.module('itaxiApp')
                     } else {
 
                         $ionicLoading.show({
-                            content: 'Có lỗi xảy ra !'
+                            content: 'Se produjo un error!'
                         });
 
                         setTimeout(function () {
