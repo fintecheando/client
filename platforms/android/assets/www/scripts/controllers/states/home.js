@@ -129,15 +129,15 @@ angular.module('itaxiApp')
 
                     $ionicPopup.show({
                         templateUrl: 'views/utils/getPhoneNumber.html',
-                        title: 'Introduzca su número de teléfono',
-                        subTitle: '(Solo tienes que introducir uno)',
+                        title: 'Nhập số điện thoại',
+                        subTitle: '(chỉ cần nhập lần đầu)',
                         scope: $scope,
                         buttons: [
-                            { text: 'Cancelar', onTap: function (e) {
+                            { text: 'Hủy', onTap: function (e) {
                                 return true;
                             } },
                             {
-                                text: '<b>Confirmar</b>',
+                                text: '<b>Xác nhận</b>',
                                 type: 'button-positive',
                                 onTap: function (e) {
 
@@ -195,7 +195,7 @@ angular.module('itaxiApp')
                
                // bookmar load,
                 $rootScope.loadingIndicator = $ionicLoading.show({
-                    template: 'Favorito dirección Agregando ...',
+                    template: 'Đang thêm địa chỉ yêu thích...',
                     noBackdrop: true
                 });
 
@@ -221,7 +221,7 @@ angular.module('itaxiApp')
                     for (var i = 0; i < appDataStore.listBookmark.all().length; i++) {
                         if (appDataStore.listBookmark.all()[i].bookmarkPoint == bookmarkPoint) {
                                $ionicLoading.hide();
-                            $rootScope.notify('Que guardada esta dirección');
+                            $rootScope.notify('Bạn đã lưu địa chỉ này');
                             flag = false;
                             return;
                         }
@@ -232,7 +232,7 @@ angular.module('itaxiApp')
 
                             if (err) {
                                    $ionicLoading.hide();
-                                $rootScope.notify('Se produjo un error. Por favor, inténtelo de nuevo más tarde');
+                                $rootScope.notify('Có lỗi xảy ra !. Vui lòng thử lại sau');
                                 $logger.info('addBookmarks', 'err', err);
                             } else {
                                 $logger.info('addBookmarks', 'resp', result);
@@ -244,14 +244,14 @@ angular.module('itaxiApp')
                                     $scope.stylebookmark1 = 'booksave';
                                 }
                                 $ionicLoading.hide();
-                                $rootScope.notify('Dirección guardado correctamente!');
+                                $rootScope.notify('Lưu địa chỉ thành công!');
 
                                 $scope.notBookmark = false;
                             }
                         })
                     }
                 } else {
-                    $rootScope.notify('Por favor, introduzca la dirección de');
+                    $rootScope.notify('Vui lòng nhập địa chỉ');
                 }
             };
 
@@ -266,7 +266,7 @@ angular.module('itaxiApp')
                 /*$rootScope.tooltip.open('Lộ trình này sẽ kết thúc sau 10s', 5000);*/
 
                 var destroyLoading = $ionicLoading.show({
-                    content: '<i class="ion-loading-c"></i> <br/>Cancelación de la Hoja de Ruta',
+                    content: '<i class="ion-loading-c"></i> <br/>Đang hủy lộ trinh',
                     animation: 'fade-in',
                     showBackdrop: false,
                     maxWidth: 200
@@ -289,7 +289,7 @@ angular.module('itaxiApp')
                         taxi.updateRoute(taxi.getDirectionInfo()[0].id, {status: 3, deleteReason: deleteReason}, function (error, result) {
                             if (result) {
                                 /*$rootScope.tooltip.open('Hủy lộ trình thành công');*/
-                                $rootScope.notify('Las cancelaciones de rutas éxito');
+                                $rootScope.notify('Hủy lộ trình thành công');
 
                                 taxi.setCurrentStatus(0);
                                 taxi.setDirectionInfo(null);
@@ -336,22 +336,22 @@ angular.module('itaxiApp')
 
                 $ionicPopup.show({
                     templateUrl: 'views/utils/destroyModal.html',
-                    title: 'Confirme la cancelación hoja de ruta',
-                    subTitle: 'Escribe el motivo',
+                    title: 'Xác nhận hủy lộ trình',
+                    subTitle: 'Nhập lý do',
                     scope: $scope,
                     buttons: [
-                        { text: 'No', onTap: function (e) {
+                        { text: 'Không', onTap: function (e) {
                             return true;
                         } },
                         {
-                            text: '<b>Cancelación</b>',
+                            text: '<b>Hủy</b>',
                             type: 'button-positive',
                             onTap: function (e) {
                                 if ($scope.deleteInfo.deleteReason != null) {
                                     $scope.destroyRoute($scope.deleteInfo);
                                     return true;
                                 } else {
-                                    $rootScope.notify('Por favor seleccione el motivo', 1000);
+                                    $rootScope.notify('Vui lòng chọn lý do!!!', 1000);
                                     setTimeout(function () {
                                         $scope.openConfirmDestroyRoute();
                                     }, 1000)
@@ -377,7 +377,7 @@ angular.module('itaxiApp')
 
             window.socketIo.on('send:quick:taxi:reject', function (data) {
                 $rootScope.hideStatus();
-                $rootScope.notify('Taxi negó su solicitud.');
+                $rootScope.notify('Taxi đã từ chối yêu cầu của bạn.');
                 $rootScope.watingTaxi = false;
             });
 
@@ -420,7 +420,7 @@ angular.module('itaxiApp')
 
             $scope.goToCenter = function () { // go to current position on maps
 
-                $rootScope.notify('encontrar lugares', 2000);
+                $rootScope.notify('Tìm vị trí', 2000);
 
                 $logger.info('gotoCenter', 'start', true);
                 navigator.geolocation.getCurrentPosition(function (position) { // GET POSITION SUCCESS

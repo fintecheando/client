@@ -23,8 +23,8 @@ angular.module('itaxiApp')
 
             $scope.deleteBookmark = function (bookmark) {
                 $ionicPopup.confirm({
-                    title: 'Xóa Địa chỉ yêu thích',
-                    content: 'Bạn có chắc chắn muốn xóa Bookmark này? '
+                    title: 'Direcciónes favoritas',
+                    content: '¿Está seguro de que desea eliminar este marcador? '
                 }).then(function (res) {
                     if (res) {
                         bookmark.destroy(function (err, result) {
@@ -48,24 +48,24 @@ angular.module('itaxiApp')
 
                 $ionicPopup.show({
                     templateUrl: 'views/utils/addBookmarkModal.html',
-                    title: 'Tạo địa chỉ yêu thích',
+                    title: 'Crear un favorito',
                     /*subTitle: 'WPA2',*/
                     scope: $scope,
                     buttons: [
                         {
-                            text: 'Hủy',
+                            text: 'Cancelar',
                             onTap: function (e) {
                                 return true;
                             }
                         },
                         {
-                            text: '<b>Đồng ý</b>',
+                            text: '<b>Aceptar</b>',
                             type: 'button-positive',
                             onTap: function (e) {
                                 if (Object.keys($scope.bookmarkItem).length > 0) {
                                     return $scope.bookmarkItem;
                                 } else {
-                                    alert('Vui lòng nhập đầy đủ');
+                                    alert('Por favor, introduzca una completa informacion');
                                     return false;
                                 }
                             }
@@ -86,14 +86,14 @@ angular.module('itaxiApp')
 
             $scope.selectBookmark = function (data) {
                 $ionicActionSheet.show({
-                    titleText: 'Địa chỉ yêu thích',
+                    titleText: 'Directorio de Direcciones',
                     buttons: [
-                        { text: 'Chọn làm điểm đến' }
+                        { text: 'Seleccionar como destino' }
                         /* { text: 'Chọn làm điểm đi' },
                          { text: 'Sửa' }*/
                     ],
-                    destructiveText: 'Xóa',
-                    cancelText: 'Hủy',
+                    destructiveText: 'Borrar',
+                    cancelText: 'Cancelar',
                     cancel: function () {
                         console.log('CANCELLED');
                     },
@@ -131,15 +131,15 @@ angular.module('itaxiApp')
                     var saveItem = new $baseModel('Bookmarks', bookmarkItem);
                     saveItem.save(function (err, result) {
                         if (err) {
-                            $rootScope.notify('Lưu địa chỉ thất bại!');
+                            $rootScope.notify('Guardar dirección');
                             $logger.info('addBookmarks', 'err', err);
                         } else {
                             /*$scope.listBookmarks.push(result);*/
                             $rootScope.bookmarked = true;
                             $logger.info('addBookmarks', 'resp', result);
-                            $rootScope.notify('Lưu địa chỉ thành công!');
+                            $rootScope.notify('Guardar dirección con éxito!');
                             $scope.quickstylebookmark = 'booksave';
-                            console.log('Lưu địa chỉ thành công!');
+                            console.log('Dirección guardado correctamente!');
                             $scope.notBookmark = false;
 
                             appDataStore.listBookmark.add(bookmarkItem);
@@ -150,7 +150,7 @@ angular.module('itaxiApp')
                         }
                     })
                 } else {
-                    $rootScope.notify('Vui lòng nhập đầy đủ thông tin');
+                    $rootScope.notify('Por favor, introduzca la información completa');
                 }
             };
 
