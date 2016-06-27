@@ -59,23 +59,23 @@ angular.module('itaxiApp')
             $scope.filterStatus = function (stt){
                 switch(stt){
                     case 0:
-                        return 'Đang đợi';
+                        return 'Espera';
                         break;
 
                     case 1:
-                        return 'Đang chạy';
+                        return 'Funcionamiento';
                         break;
 
                     case 2:
-                        return 'Hoàn thành';
+                        return 'Logro';
                         break;
 
                     case 3:
-                        return 'Bị hủy bởi khách hàng';
+                        return 'Cancelada por el cliente';
                         break;
 
                     case 4:
-                        return 'Bị hủy bởi tài xế';
+                        return 'Cancelado por el conductor';
                         break;
 
 
@@ -98,9 +98,9 @@ angular.module('itaxiApp')
                     $scope.addReportProcess = false;
 
                     if(!err){
-                        $rootScope.notify('Phản hồi của bạn đã được gửi !');
+                        $rootScope.notify('Su respuesta ha sido enviada!');
                     }else {
-                        $rootScope.notify('Lỗi ! vui lòng thử lại sau ');
+                        $rootScope.notify('¡Error! Inténtelo de nuevo más tarde');
                     }
                 })
             };
@@ -120,10 +120,10 @@ angular.module('itaxiApp')
                 $ionicActionSheet.show({
                     /*titleText: 'Lịch sử lộ trình',*/
                     buttons: [
-                        { text: 'Xem chi tiết' }
+                        { text: 'Ver detalles' }
                     ],
-                    destructiveText: 'Xóa lộ trình này',
-                    cancelText: 'Hủy',
+                    destructiveText: 'Eliminar esta hoja de ruta',
+                    cancelText: 'Cancelar',
                     cancel: function () {
                         console.log('CANCELLED');
                     },
@@ -139,10 +139,10 @@ angular.module('itaxiApp')
                     },
                     destructiveButtonClicked: function () {
                         if (routes.status == 0 || routes.status == 1) {
-                            $rootScope.notify('Lộ trình chưa hoàn thành, không thể xóa');
+                            $rootScope.notify('Plan de trabajo sin terminar, no puede borrar');
                         } else {
 
-                            $rootScope.notify('Đang xóa ..', true);
+                            $rootScope.notify('Eliminando ..', true);
 
 
                             routes.status = 5;

@@ -14,7 +14,7 @@ angular.module('itaxiApp')
             var loadMyTaxi = function () {
 
                 $ionicLoading.show({
-                    content: 'Đang tải ...',
+                    content: 'Cargando...',
                     animation: 'fade-in',
                     showBackdrop: false,
                     maxWidth: 200

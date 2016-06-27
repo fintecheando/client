@@ -14,7 +14,7 @@ angular.module('itaxiApp')
 
             var loadDriverInfo = function () {
 
-                $rootScope.showStatus('Obtención de la información..');
+                $rootScope.showStatus('La obtención de información ..');
 
                 if (appDataStore.taxiInfo.size() > 0 && appDataStore.taxiInfo.get(driverID)) {
                     $scope.infomation = appDataStore.taxiInfo.get(driverID);
@@ -95,15 +95,15 @@ angular.module('itaxiApp')
                         $restful.delete({table: 'MyTaxi', id: resp.data[0].id}, function (resp) {
                             if (resp.success) {
                                 $scope.removeMyTaxiProcess = false;
-                                $rootScope.notify('Taxi eliminado correctamente');
+                                $rootScope.notify('Xóa Taxi thành công');
                                 $scope.canAddTaxi = true;
                             } else {
-                                $rootScope.notify('Se ha producido un error!');
+                                $rootScope.notify('Se ha producido un error !');
                             }
                         });
                     }else {
                         $scope.removeMyTaxiProcess = false;
-                        $rootScope.notify('Hay un problema. Por favor, inténtelo de nuevo más tarde.');
+                        $rootScope.notify('Hay un problema! Por favor, inténtelo de nuevo más tarde.');
                     }
                 });
 
@@ -114,7 +114,7 @@ angular.module('itaxiApp')
                 var emitData = {
                     from: appConfig.deviceId,
                     to: taxi.getDirectionInfo()[0].driver.username,
-                    name: 'Cliente',
+                    name: 'Khách hàng',
                     deviceId: appConfig.deviceId,
                     content: messageContent,
                     time: new Date(),
@@ -145,7 +145,7 @@ angular.module('itaxiApp')
 
 
             $scope.addMyTaxi = function (taxiInfo) {
-                $rootScope.notify('Agregando ..', true);
+                $rootScope.notify('Đang thêm ..', true);
 
                 var data = {
                     customer: $auth.getAppRegisterInfo().id,
